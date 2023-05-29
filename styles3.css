@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;  
+    font-family: 'Lato', sans-serif;
+    line-height: 23px;
+}
+
+/* Header, Navigation bar*/
+
+.top{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(webphotos/mainfive.jpg);
+    background-size: center;
+    background-size: cover;
+    position: relative;
+}
+
+.nav {   
+    display:flex;
+    padding: 30px 10%; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar{
+    text-align: center;
+}
+
+.logo{
+    width: 100px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.navlinks {
+    flex: 7;
+    text-align: center;
+    margin: 0 60px;
+}
+
+.mainnav li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.mainnav li a {
+    color: rgb(224, 221, 221);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.mainnav li a:hover{
+    background-color: #12949c;
+    color: #bbe6f0;
+}
+
+.subnav{
+    list-style: none;
+    display: none; 
+    position: absolute;
+    background-color: #12949c;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.subnav  li  a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 5px;
+}
+
+.mainnav  li:hover  .subnav {
+    display: block; 
+}
+
+.maintext{
+    color: white;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+}
+
+
+
+@media (max-width: 700px) {
+    .maintext {
+        font-size: 15px;
+    }
+
+    .mainnav li{
+        display: block;
+        padding: 20px;
+    }
+
+    .mainnav{
+        position: absolute;
+        height: 100vh;
+        width:250px;
+        background-color: #12949c;
+        top:0; right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .subnav li{
+        background-color:rgb(128, 159, 173) ;
+        padding: 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+/*Section one*/ 
+
+.section_one{
+    background-color: rgb(194, 222, 212);
+    margin: 30px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.map{
+    height: 270px
+}
+
+.intro h2, p{
+    padding: 10px 20px;
+}
+
+.intro p{
+    font-size: 14px;
+    border-right: 3px solid rgb(0, 138, 150);
+    border-bottom: 3px solid rgb(0, 138, 150);
+}
+
+.map iframe{
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+}
+
+/*Section two*/
+
+.turtle_service_intro h2{
+    text-align: justify;
+    color: rgb(0, 138, 150);
+    padding: 10px 30px;
+}
+
+.turtle_service_intro p{
+    padding: 5px 55px;
+    color: rgb(0, 138, 150);
+    font-size: 14.5px ;
+}
+
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+    grid-gap: 30px;
+    justify-content: center;
+}
+
+.service_points1,
+.service_points2,
+.service_points3{
+    color: rgb(0, 138, 150);
+    width: 300px;
+    height: 469px;
+    border: 1.5px solid  rgb(0, 138, 150);
+    padding-top: 10px;
+    padding-bottom:0 ;
+}
+
+.details p{
+    height: 200px;
+}
+
+.details h2{
+    text-align: center;
+}
+
+.image img{
+    width: 300px;
+    height: 225px;
+}
+
+/*Section three*/ 
+.section_three{
+    background-color: rgb(194, 222, 212);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 50px 20px;
+}
+
+.conclution h2, p{
+    padding: 10px 20px;
+}
+
+
+.images img{
+    width: 300px;
+    padding: 10px;
+}
+
+footer{
+    margin-top: 15px;
+}
+
+.row1,
+.row2{
+    padding-top: 20px;
+    background-color: rgb(109, 171, 202);
+    text-align: center;
+}
+
+form input{
+    background-color: azure;
+    margin-bottom: 15px;
+    padding: 5px;
+    height: 30px;
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    outline-color: rgb(64, 136, 172);
+}
+
+form button{
+    padding: 5px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(62, 62, 62);
+    background-color: rgb(220, 237, 245);
+    cursor: pointer;
+    transition: all 0.3s ease 0s
+}
+
+form button:hover{
+    color: beige;
+    background-color: rgb(3, 65, 94);
+}
+
+footer h3{
+    color: rgb(62, 62, 62);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.row2 p{
+    padding: 0 3px 3px 3px;
+    color:rgb(47, 47, 47);
+}
+

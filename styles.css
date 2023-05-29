@@ -1,0 +1,977 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+    font-family: 'Lato', sans-serif;
+    line-height: 23px; 
+}
+
+/* Home Page */
+/* Header, Navigation bar, Main image*/
+.top{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(webphotos/responsivemain.jpg);
+    background-size: center;
+    background-size: cover;
+    position: relative;
+}
+
+.nav {   
+    display:flex;
+    padding: 30px 10%; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar{
+    text-align: center;
+}
+
+.logo{
+    width: 100px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.navlinks {
+    flex: 7;
+    text-align: center;
+    margin: 0 60px;
+}
+
+.mainnav li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    color: rgb(133, 176, 167);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.mainnav li a {
+    color: rgb(224, 221, 221);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.mainnav li a:hover{
+    background-color: #12949c;
+    color: #bbe6f0;
+}
+
+.subnav{
+    list-style: none;
+    display: none; 
+    position: absolute;
+    background-color: #12949c;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.subnav  li  a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 5px;
+}
+
+.mainnav  li:hover  .subnav {
+    display: block; 
+}
+
+.maintext{
+    color: white;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+.subtext h3 {
+    font-weight: normal;
+    padding-top: 15px;  
+}
+
+.top label{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 500px) {
+    .maintext {
+        font-size: 20px;
+    }
+
+    .mainnav li{
+        display: block;
+        padding: 20px;
+    }
+
+    .mainnav{
+        position: absolute;
+        height: 100vh;
+        width:250px;
+        background-color: #12949c;
+        top:0; right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .subnav li{
+        background-color:rgb(128, 159, 173) ;
+        padding: 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+
+
+/* Introduction*/
+.intro h1 {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+  
+.paraone {
+    padding: 0 30px 30px 30px;
+    font-size: 15px;
+    color: rgb(63, 62, 62);
+    text-align: center;
+}
+ 
+.baby_turtleone {
+    width: 30%;
+}
+
+/* Who We are - sub section one*/
+.sub_sec_one {
+    background-color: rgb(226, 239, 245);
+    margin: 50px 25px;
+    padding-bottom: 20px;
+}
+
+.sub_sec_one h1{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.aboutsection{
+    display: flex;
+    text-align: center;
+    padding: 10px;
+}
+
+.about{
+    font-size: 14px;
+    text-align: justify;
+    color:rgb(63, 62, 62); 
+    padding: 10px;
+    flex: 3;
+}
+.aboutimage{
+    flex: 2;
+}
+.aboutsection img{
+    width: 70%;
+}
+@media screen and (min-width: 600px) {
+    .aboutsection {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .about {
+      flex: 3;
+      margin: 0;
+      margin-right: 20px;
+      text-align: left;
+    }
+
+    .about p{
+        font-size: 20px;
+    }
+  
+    .aboutimage {
+      flex: 2;
+    }
+}
+  
+
+/*Hatcherties and tips for visiting- sub section two*/
+
+.hatch{
+    text-align: center;
+    margin: 20px 100px;
+    border-bottom: 2px solid rgb(74, 74, 74);
+}
+
+.hatch h1{
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+.hatch p{
+    line-height: 23px;
+    padding: 10px 0 10px 0;
+}
+
+.bulletlist{
+    margin: 0 50%;
+    padding-bottom: 20px;
+}
+.bulletlist li{
+    text-align: justify;
+}
+
+
+.tips{
+    text-align: justify;
+    margin: 20px 30%;
+    border-top: 2px solid rgb(74, 74, 74);
+}
+
+.tips ol {
+    counter-reset: my-counter; 
+}
+  
+.tips ol li {
+    counter-increment: my-counter;
+    margin-bottom: 20px; 
+}
+
+/* images row */
+
+.image_section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image_section img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px;
+}
+
+@media screen and (min-width: 195px) {
+    .image_section img {
+      max-width: 400px;
+    }
+  }
+  
+/* Conservation Efforts - sub section three*/
+.sub_sec_three{
+    background-color: rgb(226, 239, 245);
+    margin: 50px 25px;
+    padding-bottom: 20px;
+}
+
+.sub_sec_three h1{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: rgb(31, 30, 30);
+}
+ 
+.efforts{
+    display: flex;
+    text-align: center;
+}
+
+.efforts_section{
+    padding: 15px;
+    flex: 2;
+}
+
+.efforts img{
+    width: 70%;
+}
+
+.lastpara{
+    font-size: 14px;
+    text-align: justify;
+    color:rgb(63, 62, 62);
+    padding: 15px;
+    flex: 3;
+}
+
+
+/*Footer for all pages*/  
+
+footer{
+    margin-top: 15px;
+    background-color: rgb(109, 171, 202);
+}
+
+.row1,
+.row2{
+    padding-top: 20px;
+    background-color: rgb(109, 171, 202);
+    text-align: center;
+}
+
+form input{
+    background-color: azure;
+    margin-bottom: 15px ;
+    padding: 5px;
+    height: 30px;
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    outline-color: rgb(64, 136, 172);
+}
+
+form button{
+    padding: 5px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(62, 62, 62);
+    background-color: rgb(220, 237, 245);
+    cursor: pointer;
+    transition: all 0.3s ease 0s
+}
+
+form button:hover{
+    color: beige;
+    background-color: rgb(3, 65, 94);
+}
+
+footer h3{
+    color: rgb(62, 62, 62);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.row2 p{
+    padding: 0 3px 3px 3px;
+    color:rgb(47, 47, 47);
+}
+
+
+/*Turtle Category Page*/
+/*Head image*/
+
+.toptwo{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(webphotos/maintwo.jpg);
+    background-size: center;
+    background-size: cover;
+    position: relative;
+}
+
+/*Introduction*/
+
+.category_intro h1{
+    font-family: 'Lato', sans-serif;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.category_intro p{
+    padding: 0 30px 30px 30px;
+    font-size: 15px;
+    color: rgb(63, 62, 62);
+    text-align: center;
+}
+
+/*Categories*/
+
+.categories {
+    margin: 40px 20px 0 20px;
+    padding: 15px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    background-color: azure;
+}
+
+.categories h2{
+    padding-bottom:20px;
+    color: rgb(11, 11, 11);
+    text-align: center;
+}
+
+.categories img {
+    display: block;
+    width: 300px;
+    height: 192px;
+    margin-left: auto;
+    margin-right:auto ;
+}
+
+.categories p{
+    width: 400px;
+    font-size: 14px;
+    color: rgb(69, 69, 69);
+    padding: 20px 30px 20px 30px;
+    text-align: justify;
+}
+
+.categories iframe{
+    display: block;
+    width: 300px;
+    margin-left: auto;
+    margin-right:auto ;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.leatherbackturtle p{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Table*/
+
+.summary_table{
+    border-collapse: collapse;
+    margin: 70px 30px ;
+    font-size: 13px;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.summary_table thead th{
+    padding: 7px 7px;
+}
+
+.summary_table tr td{
+    padding: 5px 10px;
+}
+
+.summary_table thead tr{
+    background-color: rgb(0, 138, 150);
+    color: white;
+}
+
+.summary_table tbody tr td:nth-child(2){
+    font-style:italic;
+}
+.summary_table tbody tr:last-of-type{
+    border-bottom: 3px solid rgb(0, 138, 150);
+}
+
+.summary_table tbody tr:nth-last-of-type(even){
+    background-color: rgb(233, 233, 233);
+}
+
+.summary_table tfoot td {
+    text-align: center;
+    padding: 7px 7px;
+    border-bottom:3px solid rgb(0, 138, 150) ;
+}
+
+@media screen and (max-width: 500px) {
+    .summary_table {
+        font-size: 11.5px;
+    }
+  
+    .summary_table thead th,
+    .summary_table tbody td {
+        padding: 5px 8px;
+    }
+}
+
+/*Hikkaduwa Turtle Hatchery Page*/
+
+/*Head image*/
+
+.topthree{
+min-height: 100vh;
+width: 100%;
+background-image: url(webphotos/mainthree.jpg);
+background-size: center;
+background-size: cover;
+position: relative;
+}
+
+/*Hikkaduwa Introduction*/
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hikkaduwa_intro{
+    padding: 50px 0px 20px 60px;
+    width: 60%;
+}
+
+.hikkaduwa_intro h2{
+    padding-bottom: 20px;
+}
+
+.h_para1{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.h_para2{
+    padding-left: 20px;
+    border-left: 3px solid rgb(0, 138, 150);
+    text-align: justify; 
+}
+
+.hikkaduwa_map{
+    width: 40%;
+    margin: auto;
+}
+
+.hikkaduwa_map iframe{
+    margin: auto;
+    padding-left: 20px;
+    padding-top: 50px;
+    width: 320px;
+    height: 250px;
+
+
+/*Things to do in Hikkduwa*/
+}
+.thingshikkaduwa{
+    background-color: rgb(243, 242, 242);
+}
+.to_do{
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+}
+
+.to_do p{
+    padding: 20px 80px;
+}
+
+.card_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    background-color: white;
+    width: 300px;
+    height: 480px;
+    margin: 20px;
+    box-shadow: 1px;
+}
+
+.card img {
+    width: 300px;
+    height: 200px;
+}
+
+.card p,
+.card h3 {
+    padding: 10px 10px 5px 10px;
+}
+
+.card p{
+    font-size: 14px;
+}
+
+.card:hover{
+    background-color: rgb(48, 48, 89);
+    color: white;
+    transform: scale(1.03);
+    transition: all 0.3s ease 0s
+}
+/* Hikkkaduwa Gallery*/
+
+
+.Hikkaduwa_gallery h2 {
+    text-align: center;
+    margin-top: 65px;
+}
+
+.gallery_container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px
+}
+
+
+.HIG img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.HIG img:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease 0s; 
+}
+
+@media screen and (max-width: 768px) {
+    .gallery_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery_container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 12px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+
+/*Threats to Turtles Page*/
+/*Head image*/
+
+
+.topsix{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(webphotos/mainsix.jpg);
+    background-size: center;
+    background-size: cover;
+    position: relative;     
+}
+
+/*Threats introduction*/
+
+.threat_intro{
+    padding: 50px 50px 20px 100px;
+}
+
+.threat_heading{
+    padding-bottom: 20px;
+}
+
+.threatparaone{
+    width: 60%;
+    margin-left: 35px;
+    padding-left: 20px;
+    border-left: 3px solid rgb(0, 138, 150);
+    text-align: justify;
+}
+
+.threatparatwo{
+    padding-top: 15px;
+    width: 90%;
+    font-size: 14px;
+}
+
+/* Threats to turtles detils*/
+
+.major_threats h2{
+    padding:50px 50px 0 100px;
+}
+
+.threat_layout{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.threats{
+    background-color: beige;
+    width: 300px;
+    height: 800px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.threats p{
+    font-size: 15px;
+    height: 255px;
+    padding-top: 15px;
+}
+
+.threats img{
+    text-align: center;
+    width: 250px;
+    height: 153px;
+    padding: 10px 10px;
+    margin: auto;
+
+}
+
+.threats h5{
+    padding-top: 15px;
+}
+
+
+.threat_links{
+    margin:auto ;
+    text-align: center;
+}
+
+.threat_links button{
+    padding: 7px 13px;
+    background-color: black;
+    border:none;
+    border-radius: 20px;
+}
+
+.threat_links button a{
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.threat_links button:hover{
+    background-color: rgb(4, 46, 53);
+    transform: scale(1.03);
+    transition: all 0.3s ease 0s; 
+}
+
+.other_container {
+    padding-top:20px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.othercard{
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.othercard img{
+    width: 100%;
+    background: rgba(27, 27, 27, 0.5);
+}
+
+.card_body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+    background: rgba(27, 27, 27, 0.5);
+    margin-top: 100px;
+    padding-bottom: 30px;
+}
+
+.card_body h1{
+    color: rgb(214, 212, 212);
+    font-size: 30px;
+}
+  
+.card_body h1,
+.card_body button {
+    margin: 0;
+}
+
+.card_body button{
+    background-color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card_body button a{
+    text-decoration: none;
+    color:  rgb(214, 212, 212);
+    font-size: 17px;
+}
+
+.card_body button:hover{
+    background-color: rgb(4, 46, 53);
+    transform: scale(1.03);
+    transition: all 0.3s ease 0s; 
+}
+
+  
+
+
+/* Purchase & Donate Page*/
+/* Head Image*/
+.topseven{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(webphotos/mainseven.jpg);
+    background-size: center;
+    background-size: cover;
+    position: relative;     
+}
+
+/* Merchandaise*/
+
+h1,
+.purchase h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.purchase_container{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+}
+
+.shop_box{
+    width: 300px;
+    height: 400px;   
+}
+
+.shop_cont{
+    padding: 17px;
+}
+
+.shop_img{
+    text-align: center;
+}
+
+.shop_img img{
+    width: 250px;
+    height: 250px;
+}
+
+.shop_info,
+.shop_button{
+    text-align: center;
+}
+
+.shop_button button{
+    padding: 5px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(62, 62, 62);
+    background-color: rgb(220, 237, 245);
+    cursor: pointer;
+    transition: all 0.3s ease 0s
+}
+
+.shop_button button:hover{
+    color: beige;
+    background-color: rgb(3, 65, 94);
+}
+
+.shop_info {
+    padding: 10px;
+}
+
+.shop_box :hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease 0s; 
+}
+
+/*Donations*/
+
+.donate_intro p{
+    text-align: center;
+    margin: 0 10% 20px 10%;
+    font-size: 13.5px;
+}
+
+.donations{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+}
+
+.donate1,
+.donate2,
+.donate3{
+    color:white;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 65%;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.donations h3{
+    margin: 5px 30%;
+    padding: 10px 18px;
+    background-color: rgb(0, 0, 0);
+    opacity: .6;
+    border-radius: 5px;
+}
+
+.donations button a{
+    text-decoration: none;
+    color: white;
+}
+
+.donations button{
+    padding: 5px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(62, 62, 62);
+    background-color: rgb(128, 159, 173);
+    cursor: pointer;
+}
+
+.donations button:hover{
+    color: beige;
+    background-color: rgb(22, 70, 93);
+    transform: scale(1.03);
+    transition: all 0.3s ease 0s; 
+}
+
+.donate1{
+    background-image:url(webphotos/donate1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.donate2{
+    background-image: url(webphotos/donate2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.donate3{
+    background-image: url(webphotos/donate3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
