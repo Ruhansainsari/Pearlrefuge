@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Refuge - Buy Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles4.css">
+      <script src="https://unpkg.com/alpinejs" defer></script>
+      <script src="tickets.js"></script>
+</head>
+<body>
+          <!-- header & navigation bar -->
+          <section>
+            <header class="top"> 
+              <div class="navbar">
+                <img  class="logo" src="webphotos2/logo.png" alt="logo">
+              </div>
+
+              <div class="maintext">
+                <h1 calss="mainone"> Buy Now</h1>
+              </div>
+      
+                <nav class="navlinks">
+                  <ul class="mainnav">
+                    <li class="home"><a href="Web assingment/home.html">Home</a></li>
+                    <li class="active"><a href="tickets.html"> Tickets</a></li>
+                    <li><a href=""> &#x25BA;</a></li>
+                    <li class="inactive"><a href="">Details </a></li>
+                    <li><a href=""> &#x25BA;</a></li>
+                    <li class="inactive"><a href="">Payment </a></li>
+                    <li><a href=""> &#x25BA;</a></li>
+                    <li class="inactive"><a href="">Confirmation</a></li>
+                  </ul>
+                  </nav>
+            </header>
+            </section>
+            
+            <div class="tickets" x-data="tickets">
+
+                <!--Calendar-->
+                <div class="ticketSelections">
+                    <div class="calendar">
+                        <h2>Select a date</h2>
+                        <input type="date" name="date" id="date" x-model="date">
+                    </div>
+                     
+                    <!--Time Duration Selecter-->
+                    <div class="durationSelecter">
+                        <h2>Select a Time Duration</h2>
+                        <div>
+                            <button @click="showTimeDropDown = !showTimeDropDown">
+                                <span x-show="!showTimeDropDown">See Available Time Slots</span>
+                                <span x-show="showTimeDropDown">Hide</span>
+                            </button>
+                            <ul class="timelist">
+                                <template x-for="(timeDuration, index) in timeSlots" :key="index">
+                                    <li x-show="showTimeDropDown || pickedTime.includes(index)"
+                                        @click="picktimedurtion(index)">
+                                        <label :for="timeDuration.slot" x-text="timeDuration.slot"></label>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Guest Selecter-->
+                    <div class="guestSelecter">
+                        <h2>Select the number of guests</h2>
+                        <template x-for="(guestCategory, index) in guestTicket" :key="index">
+                            <div class="insertguest">
+                                <div class="label-card">
+                                    <label x-bind:for="guestCategory.category" x-text="guestCategory.category"></label>
+                                </div>
+                                <div>
+                                    <button type="button" @click="guestTicket[index].numberOfTickets = (guestTicket[index].numberOfTickets - 1 > 0 ? guestTicket[index].numberOfTickets - 1 : 0); calculate(guestTicket[index])">-</button>
+                                    <input type="number" x-model="guestTicket[index].numberOfTickets"></input>
+                                    <button @click="guestTicket[index].numberOfTickets = guestTicket[index].numberOfTickets + 1; calculate(guestTicket[index])">+</button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+  <div class="tables">
+        <!-- Pricing Table -->
+        <div class="pricingTable">
+            <h2>Prices</h2>
+            <table>
+                <tr>
+                    <th>Guest Type</th>
+                    <th>Off Peak Hours</th>
+                    <th>Peak Hours</th>
+                </tr>
+
+                <tr>
+                    <td>Sri Lankan Adult</td>
+                    <td>$4</td>
+                    <td>$6</td>
+                </tr>
+
+                <tr>
+                    <td> Sri Lankan Child </td>
+                    <td>$2</td>
+                    <td>$3</td>
+                </tr>
+
+                <tr>
+                    <td>Foreign Adult</td>
+                    <td>$10</td>
+                    <td>$13</td>
+                </tr>
+
+                <tr>
+                    <td>Foreign Child</td>
+                    <td>$5</td>
+                    <td>$8</td>
+                </tr>
+
+                <tr>
+                    <td>Infant</td>
+                    <td>$0</td>
+                    <td>$0</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Summary Table -->
+        <div class="summaryTable" x-show="pickedTime.length > 0"> 
+            <h2>Order Summary</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Date</td>
+                        <template x-for="(date, dateIndex) in pickedDates">
+                            <td colspan="2" x-text="date"></td>
+                        </template>
+                    </tr>
+            
+                    <tr>
+                        <td>Time</td>
+                        <td colspan="2">
+                            <template x-for="timeIndex in pickedTime">
+                               <span x-text="'   -  ' + timeSlots[timeIndex].slot"></span>
+                                <br>
+                            </template>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td>Duration</td>
+                        <td colspan="2" x-text="pickedTime.length + ' hrs'"></td> 
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2">Tickets </td>
+                        <td>Charges</td>                    
+                    </tr>
+    
+                    <tr>
+                        <td> Sri Lankan Adult </td>
+                        <td x-text="guestTicket[0].numberOfTickets"></td>                    
+                        <td x-text="'$' + guestTicket[0].totalPerCategory"></td>
+                    </tr>
+    
+                    <tr>
+                        <td> Sri Lankan Child </td>
+                        <td x-text="guestTicket[1].numberOfTickets"></td>                    
+                        <td x-text="'$' + guestTicket[1].totalPerCategory"></td>
+                    </tr>
+    
+                    <tr>
+                        <td> Foreign Adult </td>
+                        <td x-text="guestTicket[2].numberOfTickets"></td>                    
+                        <td x-text="'$' + guestTicket[2].totalPerCategory"></td>
+                    </tr>
+    
+                    <tr>
+                        <td> Foreign Child </td>
+                        <td x-text="guestTicket[3].numberOfTickets"></td>                    
+                        <td x-text="'$' + guestTicket[3].totalPerCategory"></td>
+                    </tr>
+    
+                    <tr>
+                        <td> Infant </td>
+                        <td x-text="guestTicket[4].numberOfTickets"></td>                    
+                        <td x-text="'(Free)' + guestTicket[4].totalPerCategory"></td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2"> Total Payable </td>
+                        <td x-text="'$' + calculateTotalAmount()"></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <div class="continuebtn" x-show="calculateTotalAmount() > 0" >
+                <button type="button" @click="gotoDetails">Continue with Purchase</button>
+            </div>
+            </div>
+</div>
+            </div>
+
+                  <!-- Footer -->
+
+        <footer>
+            <div class="row1">
+                <h3>Newsletter</h3>
+                <form class="footer">
+                    <input type="email" placeholder="Enter your email">
+                    <br>
+                    <button type="submit">Join us</button>
+                </form>
+            </div>
+
+            <div class="row2">
+                <h3>Contact</h3>
+                <p>+94 11262756</p>
+                <p>pearlrefuge@gmail.com</p>
+                <p>67/5 Charles Drive, Mt. Lavinia, Sri Lanka</p>
+
+            </div>
+
+</body>
+</html>

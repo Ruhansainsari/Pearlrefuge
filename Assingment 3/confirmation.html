@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Refuge - Buy Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles4.css">
+      <script src="https://unpkg.com/alpinejs" defer></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+      <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+      <script src="tickets.js"></script>
+      <script src="details.js"></script>
+</head>
+<body>
+          <!-- header & navigation bar -->
+          <section>
+            <header class="top"> 
+              <div class="navbar">
+                <img  class="logo" src="webphotos2/logo.png" alt="logo">
+              </div>
+
+              <div class="maintext">
+                <h1 calss="mainone"> Buy Now</h1>
+              </div>
+      
+              <nav class="navlinks">
+                <ul class="mainnav">
+                  <li class="home"><a href="home.html">Home</a></li>
+                  <li class="active"><a href=""> Tickets</a></li>
+                  <li><a href=""> &#x25BA;</a></li>
+                  <li class="active"><a href="">Details </a></li>
+                  <li><a href=""> &#x25BA;</a></li>
+                  <li class="active"><a href="">Payment </a></li>
+                  <li><a href=""> &#x25BA;</a></li>
+                  <li class="active"><a href="">Confirmation</a></li>
+                </ul>
+                </nav>
+          </section>
+
+          <!-- Summary Table -->
+          <div  x-data="tickets" class="confirmation-summaryTable"> 
+            <h1>Successful!</h1>
+            <p>Thank you for your order. Your order has been confirmed with us.<br> You can show this confirmation at the entrance. Following is the summary of your order.</p>
+            <div class="confirmation-summaryTable-container">
+                <table>
+                    <tbody>
+    
+                        <tr>
+                            <td colspan="2">Name</td>
+                            <td id="fullName"></td>
+                        </tr>
+    
+                        <tr>
+                            <td colspan="2">Phone</td>
+                            <td id="phone"></td>
+                        </tr>
+    
+                        <tr>
+                            <td colspan="2">Email</td>
+                            <td id="email"></td>
+                        </tr>
+    
+                        <tr>
+                            <td colspan="2">Gender</td>
+                            <td id="gender"></td>
+                        </tr>
+    
+                        <tr>
+                            <td colspan="2">Date</td>
+                            <td x-text="localStorage.getItem('selectedDate')"></td>
+                        </tr>
+                
+                        <tr>
+                            <td colspan="2">Time</td>
+                            <td>
+                                <template x-for="timeIndex in JSON.parse(localStorage.getItem('selectedTimeSlots'))">
+                                <span x-text="'   -  ' + timeSlots[timeIndex].slot"></span>
+                                </template>
+                            </td>
+                        </tr>
+                
+                        <tr>
+                            <td colspan="2">Duration</td>
+                            <td x-text=" localStorage.getItem('duration') + 'hrs' "></td> 
+                        </tr>
+        
+                        <tr>
+                            <td colspan="2">Tickets </td>
+                            <td>Charges</td>                    
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"></td>
+                            <td></td>
+                        </tr>
+                        
+                          <template x-for="(guestTicket, index) in JSON.parse(localStorage.getItem('guestTicket'))" :key="index">
+                            <tr>
+                                  <td x-text="guestTicket.category"></td>
+                                  <td x-text="guestTicket.numberOfTickets"> </td>  
+                                  <td x-text="'$'+ guestTicket.totalPerCategory"></td>
+                            </tr>
+                          </template>
+                        
+                        <tr>
+                            <td  colspan="2"> Total Payable </td>
+                            <td x-text="'$' + localStorage.getItem('totalPayable');"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+
+                  const storedGuest = localStorage.getItem('guest');
+                  if (storedGuest) {
+                    const guestData = JSON.parse(storedGuest);
+              
+                    document.getElementById('fullName').textContent = guestData.fullName;
+                    document.getElementById('phone').textContent = guestData.phone;
+                    document.getElementById('email').textContent = guestData.email;
+                    document.getElementById('gender').textContent = guestData.gender;
+                  }
+                });
+              </script>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row1">
+                <h3>Newsletter</h3>
+                <form class="footer">
+                    <input type="email" placeholder="Enter your email">
+                    <br>
+                    <button type="submit">Join us</button>
+                </form>
+            </div>
+
+            <div class="row2">
+                <h3>Contact</h3>
+                <p>+94 11262756</p>
+                <p>pearlrefuge@gmail.com</p>
+                <p>67/5 Charles Drive, Mt. Lavinia, Sri Lanka</p>
+
+            </div>
+
+          </body>
+</html>

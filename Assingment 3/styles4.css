@@ -1,0 +1,553 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+    font-family: 'Lato', sans-serif;
+    line-height: 23px; 
+}
+
+/* Tickets Page */
+/* Header, Navigation bar, Main image*/
+
+header{
+    width: 100%;
+    background-image: url(webphotos2/mainimage.jpg);
+    background-size: cover;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+
+.nav {   
+    display:flex;
+    padding: 30px 10%; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar{
+    text-align: center;
+}
+
+.logo{
+    width: 8%;
+    padding: 15px 10px 0px 10px;
+    display: inline-block;
+}
+
+.navlinks {
+    flex: 7;
+    text-align: center;
+    margin: 0 60px;
+    font-size: 40px;
+}
+
+.mainnav li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    color: rgb(133, 176, 167);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.mainnav li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.maintext{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    padding: 60px;
+}
+
+.home{
+    background-color: rgb(2, 10, 70);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px 20px 20px;
+    margin-right: 40px;
+}
+
+.home:hover{
+    background-color: white;
+}
+
+.home a:hover{
+   color: rgb(2, 10, 70);
+}
+
+.active{
+    background-color: rgb(69, 181, 95);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px 20px 20px;
+}
+
+.inactive{
+    background-color: rgb(95, 93, 93);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px 20px 20px;
+}
+
+
+
+@media (max-width: 500px) {
+    .maintext {
+        font-size: 20px;
+    }
+
+    .mainnav li{
+        display: block;
+        padding: 20px;
+    }
+
+    .mainnav{
+        position: absolute;
+        height: 100vh;
+        width:250px;
+        background-color: rgb(18, 148, 156);
+        top:0; right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .subnav li{
+        background-color:rgb(128, 159, 173) ;
+        padding: 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+/*Footer for all pages*/  
+
+footer{
+    margin-top: 40px;
+    background-color: rgb(109, 171, 202);
+}
+
+.row1,
+.row2{
+    padding-top: 20px;
+    background-color: rgb(109, 171, 202);
+    text-align: center;
+}
+
+.footer input{
+    background-color: azure;
+    margin-bottom: 15px ;
+    padding: 5px;
+    height: 30px;
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    outline-color: rgb(64, 136, 172);
+}
+
+.footer button{
+    padding: 5px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(62, 62, 62);
+    background-color: rgb(220, 237, 245);
+    cursor: pointer;
+    transition: all 0.3s ease 0s
+}
+
+.footer button:hover{
+    color: beige;
+    background-color: rgb(3, 65, 94);
+}
+
+footer h3{
+    color: rgb(62, 62, 62);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.row2 p{
+    padding: 0 3px 3px 3px;
+    color:rgb(47, 47, 47);
+}
+
+  
+/* Calendar*/
+
+.tickets{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 40px;
+}
+
+.tickets{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticketSelections h2{
+    padding: 20px 0;
+}
+
+.calendar input{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+/*Duration Selecter*/
+
+.durationSelecter button{
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(18, 148, 156);
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+.timelist {
+    width: 250px;
+}
+.timelist li{
+    list-style: none;
+    font-size: 17px;
+    padding: 15px 0 15px 37px;
+    background-color: rgb(187, 230, 240);
+    cursor: pointer;
+}
+
+.timelist li:hover{
+    background-color: rgb(18, 148, 156);
+}
+
+/*Guest Selecter*/
+
+.guestSelecter button{
+    font-size: 17px;
+    width: 33px;
+    border: none;
+    background-color: rgb(18, 148, 156);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.insertguest{
+    font-size: 17px;
+    padding: 20px 0;
+    display: flex;
+}
+
+.label-card{
+    width: 170px;
+}
+
+.insertguest input{
+    width: 70px;
+    border: none;
+    text-align: center;
+}
+
+.insertguest button{
+    border-radius: 20px;
+}
+
+.insertguest button:hover{
+    cursor: pointer;
+    background-color: rgb(61, 176, 202);
+}
+
+.tables h2{
+    padding: 20px 0;
+}
+
+
+/* Pricing Table */
+
+.pricingTable table tr th {
+    background-color: rgb(18, 148, 156);
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.pricingTable table tr td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.pricingTable table tr:nth-child(odd) {
+    background-color: rgb(219, 236, 249);
+}
+
+
+
+/* Summary Table */
+
+.summaryTable h2{
+    padding: 0 0 20px 0;
+}
+
+.summaryTable{
+    text-align: center;
+    border: 1px solid rgb(18, 148, 156);
+    padding: 30px;
+}
+
+.summaryTable table {
+    width: 350px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin: auto;
+}
+  
+.summaryTable td {
+    padding: 8px;
+    text-align: center;
+    padding-right: 40px;
+}
+
+.summaryTable tr:nth-child(odd) {
+    background-color: #e8edee;
+}
+
+.summaryTable tr:nth-child(4) {
+   font-weight: bold;
+   background-color: rgb(219, 236, 249);
+   border-top: 2px solid rgb(18, 148, 156);
+   border-bottom: 2px solid rgb(18, 148, 156);
+   padding: 50px 0;
+}
+  
+.summaryTable tr:last-child {
+    font-weight: bold;
+    background-color: rgb(18, 148, 156);
+    color: rgb(255, 255, 255);
+}
+.summaryTable {
+    margin-top: 50px;
+}
+
+.continuebtn{
+    margin: 20px;
+}
+
+.summaryTable button{
+    padding: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(15, 203, 128);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.summaryTable button:hover {
+    background-color: rgb(4, 128, 66);
+}
+
+
+
+/* Details Page*/
+
+.details-container{
+    margin-right: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Details Form*/
+
+.details {
+    width: 500px;
+    margin: 50px 100px;
+    padding: 20px;
+    border: 1px solid rgb(18, 148, 156);
+}
+  
+.details h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+.details label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+.details input[type="text"],
+.details input[type="email"],
+.details input[type="tel"],
+.details select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(18, 148, 156);
+    border-radius: 4px;
+}
+  
+.details .error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+  
+.details .error-message {
+    display: block;
+}
+
+.details button[type="submit"] {
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: rgb(15, 203, 128);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+.details button[type="submit"]:hover {
+    background-color: rgb(4, 128, 66);
+}
+
+.gotopayment.btn{
+    text-align: center;
+}
+
+
+/* Payment Page*/
+
+.payment-container{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+/* Payment Form*/
+
+.payment {
+    width: 500px;
+    margin: 50px 100px;
+    padding: 20px;
+    border: 1px solid rgb(18, 148, 156);
+}
+  
+.payment h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+.payment label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+  
+.payment input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgb(18, 148, 156);
+    border-radius: 4px;
+}
+
+.payment button[type="submit"] {
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: rgb(15, 203, 128);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+.payment button[type="submit"]:hover {
+    background-color: rgb(4, 128, 66);
+}
+
+.payment  .error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+.payment .error-message {
+    display: block;
+}
+
+/*Confirmation Page*/ 
+
+.confirmation-summaryTable{
+    margin: 30px 100px 10px 100px;
+}
+
+.confirmation-summaryTable h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(15, 203, 128);
+}
+
+.confirmation-summaryTable p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+.confirmation-summaryTable-container{
+    text-align: center;
+    padding: 0px 200px;
+}
+
+.confirmation-summaryTable-container table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin: auto;
+}
+  
+.confirmation-summaryTable-container td {
+    padding: 8px;
+    text-align: center;
+    padding-right: 40px;
+}
+
+.confirmation-summaryTable-container tr:nth-child(odd) {
+    background-color: rgb(242, 242, 242);
+}
+
+.confirmation-summaryTable-container tr:nth-child(8) {
+    font-weight: bold;
+    background-color: rgb(219, 236, 249);
+    border-top: 2px solid rgb(18, 148, 156);
+    border-bottom: 2px solid rgb(18, 148, 156);
+    padding: 50px 0;
+ }
+  
+  
+.confirmation-summaryTable-container tr:last-child {
+    font-weight: bold;
+    background-color: rgb(18, 148, 156);
+    color: rgb(255, 255, 255);
+}
+.confirmation-summaryTable-container {
+    margin-top: 50px;
+}

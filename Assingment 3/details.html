@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Refuge - Buy Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles4.css">
+      <script src="https://unpkg.com/alpinejs" defer></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+      <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+      <script src="tickets.js"></script>
+      <script src="details.js"></script>
+</head>
+<body>
+          <!-- header & navigation bar -->
+          <section>
+            <header class="top"> 
+              <div class="navbar">
+                <img  class="logo" src="webphotos2/logo.png" alt="logo">
+              </div>
+
+              <div class="maintext">
+                <h1 calss="mainone"> Buy Now</h1>
+              </div>
+      
+              <nav class="navlinks">
+                <ul class="mainnav">
+                  <li class="home"><a href="home.html">Home</a></li>
+                  <li class="active"><a href="tickets.html"> Tickets</a></li>
+                  <li><a href=""> &#x25BA;</a></li>
+                  <li class="active"><a href="details.html">Details </a></li>
+                  <li><a href=""> &#x25BA;</a></li>
+                  <li class="inactive"><a href="">Payment </a></li>
+                  <li><a href=""> &#x25BA;</a></li>
+                  <li class="inactive"><a href="">Confirmation</a></li>
+                </ul>
+                </nav>
+            </header>
+          </section>
+          
+
+<div class="details-container">
+  <div class="details" x-data="details" x-init="loadFromLocalStorage()">
+    <form x-on:submit.prevent="gotoPayment">
+      <h1>Enter your details</h1>
+      <div>
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" id="fullName" x-model="guest.fullName" x-on:input="fullNameInput" required>
+        <span x-show="!guest.fullName" class="error-message">Full Name is required</span>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone" x-model="guest.phone" required>
+        <span x-show="!guest.phone" class="error-message">Phone Number is required</span>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="text" x-model="guest.email" x-on:input="saveToLocalStorage" required>
+        <span x-show="!guest.phone" class="error-message">Email is required</span>
+      </div>
+
+      <div>
+        <label for="confirmEmail">Confirm Email</label>
+        <input type="email" x-model="guest.confirmEmail" x-on:input="emailValidation" required >
+        <span x-show="confirm" class="error-message">Emails do not match</span>
+      </div>
+
+      <div>
+        <label for="gender">Gender</label>
+        <select type="gender" name="gender" id="gender" x-model="guest.gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="gotopayment.btn">
+        <button type="submit">Continue</button>
+      </div>
+    </form>
+  </div>
+
+
+    <!-- Summary Table -->
+    <div  x-data="tickets" class="summaryTable"> 
+      <h2>Order Summary</h2>
+      <table>
+          <tbody>
+              <tr>
+                  <td colspan="2">Date</td>
+                  <td x-text="localStorage.getItem('selectedDate')"></td>
+              </tr>
+      
+              <tr>
+                  <td colspan="2">Time</td>
+                  <td>
+                      <template x-for="timeIndex in JSON.parse(localStorage.getItem('selectedTimeSlots'))">
+                      <span x-text="'   -  ' + timeSlots[timeIndex].slot"></span>
+                      </template>
+                  </td>
+              </tr>
+      
+              <tr>
+                  <td colspan="2">Duration</td>
+                  <td x-text=" localStorage.getItem('duration') + 'hrs' "></td> 
+              </tr>
+
+              <tr>
+                  <td colspan="2">Tickets </td>
+                  <td>Charges</td>                    
+              </tr>
+
+              
+                <template x-for="(guestTicket, index) in JSON.parse(localStorage.getItem('guestTicket'))" :key="index">
+                  <tr>
+                        <td x-text="guestTicket.category"></td>
+                        <td x-text="guestTicket.numberOfTickets"> </td>  
+                        <td x-text="'$'+ guestTicket.totalPerCategory"></td>
+                  </tr>
+                </template>
+              
+              <tr>
+                  <td  colspan="2"> Total Payable </td>
+                  <td x-text="'$' + localStorage.getItem('totalPayable');"></td>
+              </tr>
+          </tbody>
+      </table>
+      
+      </div>
+</div>
+
+      <!-- Footer -->
+
+      <footer>
+        <div class="row1">
+            <h3>Newsletter</h3>
+            <form class="footer">
+                <input type="email" placeholder="Enter your email">
+                <br>
+                <button type="submit">Join us</button>
+            </form>
+        </div>
+
+        <div class="row2">
+            <h3>Contact</h3>
+            <p>+94 11262756</p>
+            <p>pearlrefuge@gmail.com</p>
+            <p>67/5 Charles Drive, Mt. Lavinia, Sri Lanka</p>
+
+        </div>
+
+        </body>
+        </html>
