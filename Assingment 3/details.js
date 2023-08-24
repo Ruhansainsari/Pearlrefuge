@@ -41,7 +41,6 @@ document.addEventListener('alpine:init', () => {
 
      fullNameInput(event) {
       const inputValue = event.target.value;
-      // Replace characters that are not letters or spaces with an empty string
       const lettersAndSpacesValue = inputValue.replace(/[^A-Za-z\s]/g, '');
       this.guest.fullName = lettersAndSpacesValue;
   },
