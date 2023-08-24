@@ -40,11 +40,12 @@ document.addEventListener('alpine:init', () => {
      },
 
      fullNameInput(event) {
-        const inputValue = event.target.value;
-        const lettersOnlyValue = inputValue.replace(/[^A-Za-z]/g, '');
-        this.guest.fullName = lettersOnlyValue;
-    },
-     
+      const inputValue = event.target.value;
+      // Replace characters that are not letters or spaces with an empty string
+      const lettersAndSpacesValue = inputValue.replace(/[^A-Za-z\s]/g, '');
+      this.guest.fullName = lettersAndSpacesValue;
+  },
+      
         gotoPayment() {
             localStorage.setItem('guest', JSON.stringify(this.guest))
             window.location.href = 'payment.html';
